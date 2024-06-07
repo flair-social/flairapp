@@ -1,7 +1,12 @@
 import React from 'react';
 import { ScrollView, View, Text, Image, StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+
 
 export function ProfileOverviewScreen() {
+    const navigation = useNavigation();
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.profileContainer}>
@@ -42,6 +47,16 @@ export function ProfileOverviewScreen() {
         </View>
         <View style={styles.postsContainer}>
           <Text style={styles.sectionTitle}>Posts</Text>
+              <TouchableOpacity style={styles.post} onPress={()=> navigation.navigate('PostPage')}>
+                <Image
+                    source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    }}
+                    style={styles.postimage}
+                    />
+                    <Text style={styles.postname}>2.7.0 Toujours plus haut</Text>
+              </TouchableOpacity>
+
             <View style={styles.post}>
                 <Image
                 source={{
@@ -51,6 +66,7 @@ export function ProfileOverviewScreen() {
                 />
                 <Text style={styles.postname}>2.7.0 Toujours plus haut</Text>
             </View>
+
         </View>
       </View>
     </ScrollView>
