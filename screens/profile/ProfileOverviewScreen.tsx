@@ -47,7 +47,7 @@ export function ProfileOverviewScreen() {
         </View>
         <View style={styles.postsContainer}>
           <Text style={styles.sectionTitle}>Posts</Text>
-              <TouchableOpacity style={styles.post} onPress={()=> navigation.navigate('PostPage')}>
+              <TouchableOpacity style={styles.post} onPress={()=> navigation.navigate('./PostPage/Postpage1.tsx')}>
                 <Image
                     source={{
                         uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -56,17 +56,6 @@ export function ProfileOverviewScreen() {
                     />
                     <Text style={styles.postname}>2.7.0 Toujours plus haut</Text>
               </TouchableOpacity>
-
-            <View style={styles.post}>
-                <Image
-                source={{
-                    uri: 'https://reactnative.dev/img/tiny_logo.png',
-                }}
-                style={styles.postimage}
-                />
-                <Text style={styles.postname}>2.7.0 Toujours plus haut</Text>
-            </View>
-
         </View>
       </View>
     </ScrollView>
