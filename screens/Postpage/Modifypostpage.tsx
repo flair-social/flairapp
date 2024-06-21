@@ -9,7 +9,13 @@ export function Modifypostpage() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>10.12.14 BUREAU</Text>
+        <TouchableOpacity style={styles.Backarrow}>
+          <Image
+            source={{ uri: 'https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-chevron-arrows-tanah-basah-basic-outline-tanah-basah-6.png' }}
+            style={styles.Backarrow}
+          />
+        </TouchableOpacity>
+        <Text style={styles.title}>jsais plus le titre</Text>
         <TouchableOpacity style={styles.editButton}>
           <Image
             source={{ uri: 'https://img.icons8.com/ios-filled/50/edit--v1.png' }}
@@ -37,7 +43,10 @@ export function Modifypostpage() {
           <View key={index} style={styles.tag}>
             <Text style={styles.tagText}>tags</Text>
             <TouchableOpacity>
-              <Text style={styles.tagRemove}>x</Text>
+              <Image
+                source={{ uri: 'https://img.icons8.com/ios-filled/50/cancel.png' }}
+                style={styles.tagRemove}
+                />
             </TouchableOpacity>
           </View>
         ))}
@@ -50,24 +59,62 @@ export function Modifypostpage() {
       <View style={styles.locationContainer}>
         <Text style={styles.locationText}>Localisation de l'annonce</Text>
         <View style={styles.addressContainer}>
+          <Image
+                source={{ uri: 'https://img.icons8.com/ios-filled/50/marker.png' }}
+                style={styles.location}
+                />
           <Text style={styles.addressText}>95 Avenue parmentier</Text>
         </View>
-        <Text style={styles.visibilityText}>L'adresse exacte ne sera pas visible</Text>
+        <View style={styles.informationVisibility}>
+            <Image
+                source={{ uri: 'https://img.icons8.com/ios-glyphs/30/info--v1.png' }}
+                style={styles.information}
+                />
+            <Text style={styles.visibilityText}>L'adresse exacte ne sera pas visible</Text>
+        </View>
+        
       </View>
       <TextInput
         style={styles.durationInput}
         placeholder="Durée de l'annonce"
       />
       <View style={styles.buttonContainer}>
-        <Button title="Aperçu" onPress={() => {}} />
-        <Button title="Confirmer" onPress={() => {}} />
-        <Button title="Supprimer l'annonce" color="red" onPress={() => {}} />
+        <TouchableOpacity style={styles.previewButton} onPress={() => {}}>
+          <Text style={styles.buttonText}>Aperçu</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.confirmButton} onPress={() => {}}>
+          <Text style={styles.buttonText}>Confirmer</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.deleteButton} onPress={() => {}}>
+          <Text style={styles.buttonText}>Supprimer l'annonce</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+
+  Backarrow: {
+    width: 20,
+    height: 20,
+  },
+  location: {
+    width: 15,
+    height: 15,
+    marginRight: 10,
+  },
+  informationVisibility: {
+    flexDirection : 'row',
+    alignItems : 'center',
+    justifyContent : 'flex-start',
+  },
+  information: {
+    width : 15,
+    height : 15,
+    margin : 5,
+    marginTop : 10,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -103,6 +150,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#e0e0e0',
     marginRight: 10,
     marginBottom: 10,
+    borderRadius: 12,
   },
   addPhotoText: {
     color: '#00796b',
@@ -132,6 +180,8 @@ const styles = StyleSheet.create({
   tag: {
     flexDirection: 'row',
     backgroundColor: '#e0f0e0',
+    justifyContent: 'space-between',
+    alignItems : 'center',
     padding: 5,
     borderRadius: 5,
     marginRight: 5,
@@ -141,8 +191,9 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   tagRemove: {
+    width: 13,
+    height: 13,
     marginLeft: 5,
-    color: 'red',
   },
   descriptionInput: {
     height: 80,
@@ -159,6 +210,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   addressContainer: {
+    flexDirection: 'row',
+    justifyContent : 'flex-start',
     backgroundColor: '#e0e0e0',
     padding: 10,
     borderRadius: 5,
@@ -182,6 +235,29 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 10,
   },
+  buttonText :{
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
+  previewButton :{
+    margin : 15,
+    padding : 10,
+    borderRadius: 5,
+    backgroundColor: '#f0f0f0',
+  },
+  confirmButton :{
+    margin : 15,
+    padding : 10,
+    borderRadius: 5,
+    backgroundColor: '#f0f0f0',
+  },
+  deleteButton :{
+    margin : 15,
+    padding : 10,
+    borderRadius: 5,
+    backgroundColor: '#f0f0f0', 
+  },
+
 });
 
 export default Modifypostpage;
