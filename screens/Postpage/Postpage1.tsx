@@ -45,7 +45,7 @@ export function Postpage1() {
           <Text style={styles.datesTitle}>Dates</Text>
           <Text style={styles.datesText}>Du 07/06/24 au 10/06/24</Text>
         </View>
-        <TouchableOpacity style={styles.Subtitlecontainer}>
+        <TouchableOpacity style={styles.Subtitlecontainer} onPress={() => navigation.navigate('Modifypostpage')}>
             <Text style={styles.groupSubtitle}>Modifier l'annonce</Text>
         </TouchableOpacity>
       </View>

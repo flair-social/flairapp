@@ -47,7 +47,7 @@ export function ProfileOverviewScreen() {
         </View>
         <View style={styles.postsContainer}>
           <Text style={styles.sectionTitle}>Posts</Text>
-              <TouchableOpacity style={styles.post} onPress={()=> navigation.navigate('./PostPage/Postpage1.tsx')}>
+              <TouchableOpacity style={styles.post} onPress={()=> navigation.navigate('PostStack')}>
                 <Image
                     source={{
                         uri: 'https://reactnative.dev/img/tiny_logo.png',

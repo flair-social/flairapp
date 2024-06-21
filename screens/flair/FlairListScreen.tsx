@@ -8,7 +8,7 @@ export function FlairListScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <TouchableOpacity style={styles.zbi} onPress={() => navigation.navigate('PostPage')}>
+      <TouchableOpacity style={styles.zbi} onPress={() => navigation.navigate('PostStack')}>
         <View style={styles.imagetagwrapper}>
           <View style={styles.tagimage}>
             <View style={styles.tagContainer}>
