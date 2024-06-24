@@ -9,7 +9,7 @@ export function Modifypostpage() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity style={styles.Backarrow}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.Backarrow}>
           <Image
             source={{ uri: 'https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/external-chevron-arrows-tanah-basah-basic-outline-tanah-basah-6.png' }}
             style={styles.Backarrow}
@@ -79,10 +79,10 @@ export function Modifypostpage() {
         placeholder="Durée de l'annonce"
       />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.previewButton} onPress={() => {}}>
+        <TouchableOpacity style={styles.previewButton} onPress={() => navigation.goBack()}>
           <Text style={styles.buttonText}>Aperçu</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.confirmButton} onPress={() => {}}>
+        <TouchableOpacity style={styles.confirmButton} onPress={() => navigation.goBack()}>
           <Text style={styles.buttonText}>Confirmer</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.deleteButton} onPress={() => {}}>
