@@ -7,8 +7,16 @@ export function Chatpage() {
   const navigation = useNavigation();
 
   const messages = [
-    { user: 'test', message: 'test' },
-
+    { user: '10.12.14 BUREAU', message: 'Kalash : sauvage' },
+    { user: 'Tom', message: 'Vous : wsh ça sort ????' },
+    { user: 'Djolanoouille', message: 'Vous : A quelle heure au duplex du coup ?' },
+    { user: 'Naps', message: "Naps : C'est la kiffance !" },
+    { user: "Vue.js c'est so 2022", message: "Aurélien : Qui y arrive pour l'auth ?" },
+    { user: 'Newwave', message: "BenzJ : J'adore R2D2 sur la nouvelle prod NewJazz" },
+    { user: 'George Floyd', message: 'Vous : pk tu rep plus ?' },
+    { user: 'PouletAnanas', message: "landry : façon les blancs vous savez pas mettre d'épices" },
+    { user: 'Dézingueur2Folles93', message: 'AD : On se revoit le prochain 20 Avril ?' },
+    { user: 'PSG on top', message: 'Stanislas a quitté le groupe.' },
   ];
 
   return (
@@ -19,7 +27,7 @@ export function Chatpage() {
       />
       <ScrollView>
         {messages.map((message, index) => (
-          <TouchableOpacity key={index} style={styles.messageContainer}>
+          <TouchableOpacity key={index} style={styles.messageContainer} onPress={() => navigation.navigate('Chat')}>
             <Text style={styles.user}>{message.user}</Text>
             <Text style={styles.message}>{message.message}</Text>
           </TouchableOpacity>
@@ -54,13 +62,6 @@ const styles = StyleSheet.create({
   message: {
     color: '#666',
     marginTop: 5,
-  },
-  navigation: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 10,
-    borderTopColor: '#eee',
-    borderTopWidth: 1,
   },
 });
 
